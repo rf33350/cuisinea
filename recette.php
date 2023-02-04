@@ -25,18 +25,18 @@ if ($recipe) {
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <h2>Ingrédients</h2>
     <ul class="list-group">
-    <?php foreach ($ingredients as $key => $ingredient) { ?>
-      <li class="list-group-item"><?= $ingredient?></li>
-    <?php } ?>
+      <?php foreach ($ingredients as $key => $ingredient) { ?>
+        <li class="list-group-item"><?= $ingredient; ?></li>
+      <?php } ?>
     </ul>
   </div>
 
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <h2>Instructions</h2>
-    <ol class="list-group">
-    <?php foreach ($instructions as $key => $instruction) { ?>
-      <li class="list-group-item"><?= $instruction ?></li>
-    <?php } ?>
+    <ol class="list-group-numbered">
+      <?php foreach ($instructions as $key => $instruction) { ?>
+        <li class="list-group-item mt-2"><?= $instruction ?></li>
+      <?php } ?>
     </ol>
   </div>
 

@@ -1,6 +1,8 @@
 <?php
   require_once('template/header.php');
   require_once('lib/recipe.php');
+
+  $recipes = getRecipes($pdo, _HOME_RECIPES_LIMIT_);
 ?>
 
     <div class="container col-xxl-8 px-4 py-5">
@@ -21,7 +23,7 @@
     </div>
 
     <div class="row">
-
+      <h2>Nos dernières recettes</h2>
       <?php 
         foreach ($recipes as $key => $recipe) { 
         include('template/recipe_partial.php');
