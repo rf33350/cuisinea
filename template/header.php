@@ -1,4 +1,5 @@
 <?php
+  require_once('lib/session.php');
   require_once('lib/config.php');
   require_once('lib/pdo.php');
 
@@ -31,7 +32,13 @@
         <?php } ?>
       </ul>
       <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+        <?php 
+          if (!isset($_SESSION['user'])) {
+            echo '<a href="login.php"><button type="button" class="btn btn-outline-primary me-2">Se connecter</button></a>';
+          } else {
+            echo '<a href="logout.php"><button type="button" class="btn btn-outline-primary me-2">Se déconnecter</button></a>';
+          }
+        ?>
+        <a href="inscription.php"><button type="button" class="btn btn-primary" style="display:<?php if (isset($_SESSION['user'])) {echo 'none';} else {echo '';}?>">S'inscrire</button></a>
       </div>
     </header>
